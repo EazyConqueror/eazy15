@@ -1,5 +1,17 @@
 proxies:
-  - {name: mr.loby.ml3, server: 142.93.168.188, port: 21612, type: ss, cipher: chacha20-ietf-poly1305, password: zUOC2CcSPiEX}    
+  - name: mr.loby.ml3
+    server: s.eazyconqueror.tk
+    port: 2099
+    type: vmess
+    uuid: 86d5aeb9-348c-4c87-8168-367057de478d
+    alterId: 0
+    cipher: auto
+    network: grpc
+    tls: true
+    servername: s.eazyconqueror.tk
+    skip-cert-verify: true
+    grpc-opts:
+      grpc-service-name: "scvps"
 proxy-groups:
   - name: mrloby
     type: url-test
