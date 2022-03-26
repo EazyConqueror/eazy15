@@ -1,9 +1,9 @@
 proxies:
   - name: mr.loby.ml3
-    server: su.eazyconqueror.tk
-    port: 999
+    server: s.eazyconqueror.tk
+    port: 2099
     type: vmess
-    uuid: 31ed9de6-a77e-48ab-be52-5d42023ff446
+    uuid: fbc08717-6420-464f-b562-e43caa06a70b
     alterId: 0
     cipher: auto
     network: grpc
@@ -11,7 +11,7 @@ proxies:
     servername: s.eazyconqueror.tk
     skip-cert-verify: true
     grpc-opts:
-      grpc-service-name: "GunService"
+      grpc-service-name: "scvps"
 proxy-groups:
   - name: mrloby
     type: url-test
