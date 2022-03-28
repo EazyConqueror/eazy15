@@ -1,17 +1,19 @@
 proxies:
   - name: mr.loby.ml3
-    server: s.eazyconqueror.tk
-    port: 2099
-    type: vmess
-    uuid: fbc08717-6420-464f-b562-e43caa06a70b
-    alterId: 0
-    cipher: auto
-    network: grpc
-    tls: true
-    servername: s.eazyconqueror.tk
-    skip-cert-verify: true
-    grpc-opts:
-      grpc-service-name: "scvps"
+   server: ge1.kitu.xyz
+   port: 443
+   type: vless
+   uuid: 962dbce1-5d62-415a-95f2-48847fdf67ad
+   cipher: auto
+   tls: true
+   skip-cert-verify: true
+   servername: ge1.kitu.xyz
+   network: ws
+   ws-opts:
+     path: /xvless/
+     headers:
+       Host: ge1.kitu.xyz
+   udp: true
 proxy-groups:
   - name: mrloby
     type: url-test
