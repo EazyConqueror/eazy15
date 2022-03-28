@@ -2,7 +2,7 @@ proxies:
   - name: mr.loby.ml3
     server: ge1.kitu.xyz
     port: 443
-    type: vless
+    type: vmess
     uuid: 962dbce1-5d62-415a-95f2-48847fdf67ad
     cipher: auto
     tls: true
