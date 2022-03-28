@@ -1,19 +1,5 @@
 proxies:
-  - name: mr.loby.ml3
-    server: ge1.kitu.xyz
-    port: 443
-    type: vmess
-    uuid: 962dbce1-5d62-415a-95f2-48847fdf67ad
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: ge1.kitu.xyz
-    network: ws
-    ws-opts:
-      path: /xvless/
-      headers:
-        Host: ge1.kitu.xyz
-    udp: true
+  - {name: mr.loby.ml3, server: 142.93.168.188, port: 21612, type: ss, cipher: chacha20-ietf-poly1305, password: zUOC2CcSPiEX}    
 proxy-groups:
   - name: mrloby
     type: url-test
