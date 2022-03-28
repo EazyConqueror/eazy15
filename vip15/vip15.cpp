@@ -1,5 +1,5 @@
 proxies:
-  - {name: mr.loby.ml3, server: 142.93.168.188, port: 21612, type: ss, cipher: chacha20-ietf-poly1305, password: zUOC2CcSPiEX}    
+  - {name: mr.loby.ml3, server: 15.185.233.7, port: 43401, type: ss, cipher: chacha20-ietf-poly1305, password: kmzlcG06ecIg}    
 proxy-groups:
   - name: mrloby
     type: url-test
