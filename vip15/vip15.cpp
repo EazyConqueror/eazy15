@@ -1,31 +1,5 @@
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7894
-  nameserver:
-    - vmi245028.contaboserver.net
-    - tls://173.212.212.231:853
-  fallback:
-    - tcp://173.212.212.231
-    - 173.212.212.231
-tun:
-  enable: true
-  stack: system
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true
-  dns-hijack:
-    - tcp://173.212.212.231:53
-experimental:
-  interface-name: en0
 proxies:
-  - name: mr.loby.ml3
-    server: 15.185.233.7
-    port: 43401
-    type: ss
-    cipher: chacha20-ietf-poly1305
-    password: kmzlcG06ecIg
-    udp: true
+  - {name: mr.loby.ml3, server: 15.185.233.7, port: 43401, type: ss, udp: true, cipher: chacha20-ietf-poly1305, password: kmzlcG06ecIg}
 proxy-groups:
   - name: mrloby
     type: url-test
