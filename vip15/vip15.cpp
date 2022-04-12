@@ -1,5 +1,10 @@
 proxies:
-  - {name: mr.loby.ml3, server: 15.185.233.7, port: 43401, type: ss, udp: true, cipher: chacha20-ietf-poly1305, password: kmzlcG06ecIg}
+  - name: "trojan"
+    type: trojan
+    server: s.eazyconqueror.tk
+    port: 8443
+    password: f7f1d8e4-711a-4fab-aa9f-4e5720f44dbe
+    udp: true
 proxy-groups:
   - name: mrloby
     type: url-test
@@ -7,7 +12,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - mr.loby.ml3
+      - "trojan"
   - name: game
     type: select
     proxies:
