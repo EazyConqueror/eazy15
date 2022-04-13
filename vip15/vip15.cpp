@@ -1,9 +1,10 @@
 proxies:
   - name: "trojan"
-    type: trojan
-    server: s.eazyconqueror.tk
-    port: 8443
-    password: f7f1d8e4-711a-4fab-aa9f-4e5720f44dbe
+    server: 15.185.233.7
+    port: 43401
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: fsCLr1CRB6W3
     udp: true
 proxy-groups:
   - name: mrloby
