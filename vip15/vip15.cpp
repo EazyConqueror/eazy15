@@ -1,5 +1,5 @@
 proxies:
-  - name: "trojan"
+  - name: mr.loby.ml3
     server: 15.185.233.7
     port: 43401
     type: ss
@@ -13,7 +13,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "trojan"
+      - mr.loby.ml3
   - name: game
     type: select
     proxies:
