@@ -4,7 +4,7 @@ proxies:
     port: 43401
     type: ss
     cipher: chacha20-ietf-poly1305
-    password: fsCLr1CRB6W3
+    password: t3tcjh6LVgRg
     udp: true
 proxy-groups:
   - name: mrloby
