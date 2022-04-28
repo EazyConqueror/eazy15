@@ -1,125 +1,78 @@
-proxies:
-  - name: "trojan"
-    type: trojan
-    server: s.eazyconqueror.tk
-    port: 8443
-    password: e0c01fa9-d850-4d56-bdae-26b176d8a62c
-    alpn:
-      - h2
-      - http/1.1
-    skip-cert-verify: true
-
-  - name: mr.loby.ml2
+proxies:   
+  - name: "ssr1"
     type: ss
     server: 207.154.225.199
     port: 26046
-    udp: true
-    skip-cert-verify: true
     cipher: chacha20-ietf-poly1305
     password: IF1lnUjSbNSH
-    
-  - name: "vmess"
-    type: vmess
-    server: s.eazyconqueror.tk
-    port: 95
-    uuid: 2c3f045e-0e6e-46d6-9ac3-14f9e7ae7b43
-    alterId: 0
-    cipher: auto
-    udp: true
-    skip-cert-verify: true
-    network: ws
-    ws-opts:
-      path: /v2rayws
-      headers:
-        Host: s.eazyconqueror.tk
-    
-  - name: "vmess-grpc"
-    server: s.eazyconqueror.tk
-    port: 2099
-    type: vmess
-    uuid: 915f0174-c048-4693-911e-ee21aed181b3
-    alterId: 0
-    cipher: auto
-    network: grpc
-    tls: true
-    servername: s.eazyconqueror.tk
-    udp: true
-    skip-cert-verify: true
-    grpc-opts:
-      grpc-service-name: "scvps"
-      
-  - name: "ssr"
+
+  - name: "ssr2"
     type: ssr
     server: 207.154.225.199
-    port: 1444
+    port: 1445
     udp: true
     cipher: aes-256-cfb
-    password: vip4
+    password: vip2
     obfs: tls1.2_ticket_auth
-    protocol: auth_chain_a
+    protocol: auth_chain_a 
     # obfs-param: domain.tld
     # protocol-param: "#"
     # udp: true
+
 proxy-groups:
-  - name: gameTROJAN
+  - name: gameTLS
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - mr.loby.ml2
-  - name: gameWS
+      - "ssr1"
+  - name: gameHTTP
     type: select
     proxies:
-      - "ssr"
-  - name: gameGRPC
-    type: select
-    proxies:
-      - "vmess-grpc"
-  - name: gameSSR
-    type: select
-    proxies:
-      - "ssr"
+      - "ssr2"
   - name: gameDIR
     type: select
     proxies:
       - DIRECT
 rules:
-  - DOMAIN,www.pubgmobile.com,gameTROJAN
-  - DOMAIN,dl.listdl.com,gameTROJAN
-  - DOMAIN,crl3.digicert.com,gameTROJAN
-  - DOMAIN,www.microvirt.com,gameTROJAN
-  - DOMAIN,android-safebrowsing.google.com,gameTROJAN
-  - DOMAIN,app-measurement.com,gameTROJAN
-  - DOMAIN,lh3.googleusercontent.com,gameTROJAN
-  - DOMAIN,android.crashsight.wetest.net,gameTROJAN
-  - DOMAIN-SUFFIX,gstatic.com,gameTROJAN
-  - DOMAIN-SUFFIX,gcloudcs.com,gameTROJAN
-  - DOMAIN-SUFFIX,sg.tdatamaster.com,gameTROJAN
-  - DOMAIN-SUFFIX,proximabeta.com,gameTROJAN
-  - DOMAIN-SUFFIX,twimg.com,gameTROJAN
-  - DOMAIN-SUFFIX,fbsbx.com,gameTROJAN
-  - DOMAIN,graph.facebook.com,gameTROJAN
-  - DOMAIN-SUFFIX,adjust.com,gameTROJAN
-  - DOMAIN-SUFFIX,amsoveasea.com,gameTROJAN
-  - DOMAIN-SUFFIX,gcloudsdk.com,gameTROJAN
-  - DOMAIN-SUFFIX,gjacky.com,gameTROJAN
-  - DOMAIN-SUFFIX,anticheatexpert.com,gameTROJAN
-  - DOMAIN-SUFFIX,onezapp.com,gameTROJAN
-  - DOMAIN-SUFFIX,qcloud.com,gameTROJAN
-  - DOMAIN-SUFFIX,doubleclick.com,gameTROJAN
-  - DOMAIN-SUFFIX,googleapis.com,gameTROJAN
-  - DOMAIN-SUFFIX,gvt1.com,gameTROJAN
-  - IP-CIDR,129.226.2.165/24,gameTROJAN
-  - GEOIP,CN,gameTROJAN
-  - DOMAIN-SUFFIX,igamecj.com,gameGRPC
-  - DOMAIN-SUFFIX,qq.com,gameGRPC
-  - DOMAIN-SUFFIX,gcloudcs.com,gameGRPC
-  - DST-PORT,20001,gameGRPC
-  - DST-PORT,20000,gameGRPC
-  - DST-PORT,20002,gameGRPC
-  - IP-CIDR,203.205.239.243/24,gameGRPC
-  - IP-CIDR,162.0.0.0/8,gameWS
-  - IP-CIDR,49.0.0.0/8,gameWS
-  - IP-CIDR,20.0.0.0/8,gameWS
+  - DOMAIN,www.pubgmobile.com,gameTLS
+  - DOMAIN,dl.listdl.com,gameTLS
+  - DOMAIN,crl3.digicert.com,gameTLS
+  - DOMAIN,www.microvirt.com,gameTLS
+  - DOMAIN,android-safebrowsing.google.com,gameTLS
+  - DOMAIN,app-measurement.com,gameTLS
+  - DOMAIN,lh3.googleusercontent.com,gameTLS
+  - DOMAIN,android.crashsight.wetest.net,gameTLS
+  - DOMAIN-SUFFIX,gstatic.com,gameTLS
+  - DOMAIN-SUFFIX,gcloudcs.com,gameTLS
+  - DOMAIN-SUFFIX,sg.tdatamaster.com,gameTLS
+  - DOMAIN-SUFFIX,proximabeta.com,gameTLS
+  - DOMAIN-SUFFIX,twimg.com,gameTLS
+  - DOMAIN-SUFFIX,fbsbx.com,gameTLS
+  - DOMAIN,graph.facebook.com,gameTLS
+  - DOMAIN-SUFFIX,adjust.com,gameTLS
+  - DOMAIN-SUFFIX,amsoveasea.com,gameTLS
+  - DOMAIN-SUFFIX,gcloudsdk.com,gameTLS
+  - DOMAIN-SUFFIX,gjacky.com,gameTLS
+  - DOMAIN-SUFFIX,anticheatexpert.com,gameTLS
+  - DOMAIN-SUFFIX,onezapp.com,gameTLS
+  - DOMAIN-SUFFIX,qcloud.com,gameTLS
+  - DOMAIN-SUFFIX,doubleclick.com,gameTLS
+  - DOMAIN-SUFFIX,googleapis.com,gameTLS
+  - DOMAIN-SUFFIX,gvt1.com,gameTLS
+  - DOMAIN-SUFFIX,igamecj.com,gameTLS
+  - DOMAIN-SUFFIX,qq.com,gameTLS
+  - DOMAIN-SUFFIX,gcloudcs.com,gameTLS
+  - IP-CIDR,203.205.239.243/24,gameTLS
+  - IP-CIDR,129.226.2.165/24,gameTLS
+  - IP-CIDR,172.16.0.1/24,gameTLS
+  - IP-CIDR,137.208.72.137/24,gameTLS
+  - GEOIP,CN,gameTLS
+  - IP-CIDR,162.0.0.0/8,gameHTTP
+  - IP-CIDR,49.0.0.0/8,gameHTTP
+  - IP-CIDR,20.0.0.0/8,gameHTTP
+  - DST-PORT,20001,gameHTTP
+  - DST-PORT,20000,gameHTTP
+  - DST-PORT,20002,gameHTTP
   - MATCH,DIRECT
