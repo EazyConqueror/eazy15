@@ -1,27 +1,28 @@
 proxies:
-  - name: "ws"
+  - name: ws
     type: vmess
-    server: it.eazyconqueror.tk
-    port: 95
-    uuid: 0baf118e-2fdb-461a-a5c0-a37135610b26
+    server: it1.vpnjantit.com
+    port: 10000
+    uuid: 3dba3982-e032-11ec-9127-7fc9160b2d45
     alterId: 0
     cipher: auto
     udp: true
     #tls: true
-    #skip-cert-verify: true
-    network: tcp
+    skip-cert-verify: true
+    network: ws
     ws-opts:
-      path: /xrayws
-      headers:
-        Host: it.eazyconqueror.tk
+      path: /vpnjantit
+      #headers:
+        #Host: it1.vpnjantit.com
 proxy-groups:
   - name: gameTLS
     type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 50
-    tolerance: 30
     proxies:
-      - "ws"
+      - ws
+    tolerance: 150
+    lazy: true
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 rules:
   - DST-PORT,9030,gameTLS
   - DST-PORT,9031,gameTLS
